@@ -24,8 +24,3 @@
 #import "agconnect_cloudfunctions-Swift.h"
 #endif
 
-@implementation AGCCloudFunctionsPlugin
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [AGCCloudFunctionsPluginCallHandler registerWithRegistrar:registrar];
-}
-@end

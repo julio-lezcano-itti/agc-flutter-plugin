@@ -26,15 +26,6 @@ public class AGConnectStoragePluginHandler: NSObject, FlutterPlugin {
     let agconnectStorageTask = AGCStorageTaskFlutter.init()
     let eventChannelPrefix = "com.huawei.agconnect.cloudstorage/eventChannel/task/"
     
-    public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "com.huawei.agconnect.cloudstorage/methodChannel/", binaryMessenger: registrar.messenger())
-        let instance = AGConnectStoragePluginHandler()
-        instance.binaryMessenger = registrar.messenger()
-        registrar.addApplicationDelegate(instance)
-        registrar.addMethodCallDelegate(instance, channel: channel)
-        
-    }
-    
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [AnyHashable : Any] = [:]) -> Bool {
         AGCInstance.startUp()

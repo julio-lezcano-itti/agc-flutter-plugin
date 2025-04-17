@@ -18,14 +18,6 @@
 #import <AGConnectRemoteConfig/AGConnectRemoteConfig.h>
 
 @implementation AGConnectRemoteConfigPlugin
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.huawei.flutter/agconnect_remote_config"
-            binaryMessenger:[registrar messenger]];
-  AGConnectRemoteConfigPlugin* instance = [[AGConnectRemoteConfigPlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
-  [registrar addApplicationDelegate:instance];
-}
 
 #pragma mark - AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

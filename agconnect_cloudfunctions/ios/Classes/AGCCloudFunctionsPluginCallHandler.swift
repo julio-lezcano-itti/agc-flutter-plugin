@@ -20,12 +20,6 @@ import AGConnectCore
 
 public class AGCCloudFunctionsPluginCallHandler: NSObject, FlutterPlugin {
     let agcCloudFunctions: AGCCloudFunctionsFlutter = AGCCloudFunctionsFlutter.init()
-    public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "com.huawei.agc.flutter.cloudfunctions/MethodChannel", binaryMessenger: registrar.messenger())
-        let instance = AGCCloudFunctionsPluginCallHandler()
-        registrar.addMethodCallDelegate(instance, channel: channel)
-        registrar.addApplicationDelegate(instance)
-    }
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [AnyHashable : Any] = [:]) -> Bool {
         AGCInstance.startUp()

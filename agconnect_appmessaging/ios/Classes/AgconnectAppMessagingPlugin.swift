@@ -25,14 +25,7 @@ public class AgconnectAppMessagingPlugin: NSObject, FlutterPlugin, AGCAppMessagi
     let appmessagingClickHandler = AppMessagingOnMessageClickEventHandler.init()
     let appmessagingDisplayHandler = AppMessagingOnMessageDisplayEventHandler.init()
     let appmessagingErrorHandler = AppMessagingOnMessageErrorEventHandler.init()
-    
-    public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "com.huawei.agc.flutter.appmessaging_methodchannel", binaryMessenger: registrar.messenger())
-        let instance = AgconnectAppMessagingPlugin()
-        registrar.addMethodCallDelegate(instance, channel: channel)
-        instance.initEventChannel(messenger: registrar.messenger())
-        registrar.addApplicationDelegate(instance)
-    }
+
     
     func initEventChannel(messenger: FlutterBinaryMessenger) {
         let eventChannelOnMessageDismiss = FlutterEventChannel(name: "com.huawei.agc.flutter.appmessaging_eventchannel_onMessageDismiss", binaryMessenger:

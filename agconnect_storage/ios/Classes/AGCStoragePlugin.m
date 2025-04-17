@@ -23,9 +23,3 @@
 // https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
 #import "agconnect_cloudstorage-Swift.h"
 #endif
-
-@implementation AGCStoragePlugin
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [AGConnectStoragePluginHandler registerWithRegistrar:registrar];
-}
-@end

@@ -24,8 +24,3 @@
 #import "agconnect_clouddb-Swift.h"
 #endif
 
-@implementation AGConnectCloudDBPlugin
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [AGConnectCloudDBPluginHandler registerWithRegistrar:registrar];
-}
-@end

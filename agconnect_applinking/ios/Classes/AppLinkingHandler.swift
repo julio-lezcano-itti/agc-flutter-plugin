@@ -20,16 +20,6 @@ import AGConnectCore
 import AGConnectAppLinking
 
 public class AppLinkingHandler: NSObject, FlutterPlugin {
-    public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "com.huawei.agc.flutter.applinking_methodchannel", binaryMessenger:
-                                            registrar.messenger())
-        let instance = AppLinkingHandler()
-        registrar.addMethodCallDelegate(instance, channel: channel)
-        registrar.addApplicationDelegate(instance)
-        let eventChannel = FlutterEventChannel(name: "com.huawei.agc.flutter.applinking_eventchannel", binaryMessenger:
-                                                registrar.messenger())
-        eventChannel.setStreamHandler(AppLinkingEventHandler())
-    }
     
     var resolvedLinkData:AGCResolvedLink?
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [AnyHashable : Any] = [:]) -> Bool {

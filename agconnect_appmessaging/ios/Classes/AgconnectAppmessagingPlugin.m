@@ -23,9 +23,3 @@
 // https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
 #import "agconnect_appmessaging-Swift.h"
 #endif
-
-@implementation AgconnectAppmessagingPlugin
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-    [AgconnectAppMessagingPlugin registerWithRegistrar:registrar];
-}
-@end

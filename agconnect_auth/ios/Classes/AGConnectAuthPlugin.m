@@ -11,8 +11,3 @@
 #import "agconnect_auth-Swift.h"
 #endif
 
-@implementation AGConnectAuthPlugin
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [AGConnectAuthPluginHandler registerWithRegistrar:registrar];
-}
-@end

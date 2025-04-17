@@ -23,8 +23,3 @@
 // https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
 #import "agconnect_applinking-Swift.h"
 #endif
-@implementation AppLinkingPlugin
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-    [AppLinkingHandler registerWithRegistrar:registrar];
-}
-@end

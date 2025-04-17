@@ -26,22 +26,7 @@ public class AGConnectCloudDBPluginHandler: NSObject, FlutterPlugin {
     var binaryMessenger: FlutterBinaryMessenger?
     let dataEncryptionKeyEventChannelHandler = AddDataEncryptionKeyEventHandler.init()
     let onEventEventChannelHandler = AddEventListenerEventHandler.init()
-    
-    public static func register(with registrar: FlutterPluginRegistrar) {
-        let methodChannel = FlutterMethodChannel(name: "com.huawei.agconnectclouddb/methodChannel/", binaryMessenger: registrar.messenger())
-        
-        let instance = AGConnectCloudDBPluginHandler()
-        registrar.addMethodCallDelegate(instance, channel: methodChannel)
-        instance.binaryMessenger = registrar.messenger()
-        
-        let dataEncryptionKeyEventChannel = FlutterEventChannel(name: "com.huawei.agconnectclouddb/eventChannel/onDataEncryptionKeyChange", binaryMessenger:
-                                                                    registrar.messenger())
-        let onEventEventChannel = FlutterEventChannel(name: "com.huawei.agconnectclouddb/eventChannel/onEvent", binaryMessenger:
-                                                        registrar.messenger())
-        dataEncryptionKeyEventChannel.setStreamHandler(instance.dataEncryptionKeyEventChannelHandler)
-        onEventEventChannel.setStreamHandler(instance.onEventEventChannelHandler)
-        registrar.addApplicationDelegate(instance)
-    }
+
     
     public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [AnyHashable: Any] = [:]) -> Bool {
         AGCInstance.startUp()

@@ -20,14 +20,6 @@
 #import <HiAnalytics/HiAnalytics.h>
 
 @implementation AGConnectCrashPlugin
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.huawei.flutter/agconnect_crash"
-            binaryMessenger:[registrar messenger]];
-  AGConnectCrashPlugin* instance = [[AGConnectCrashPlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
-    [registrar addApplicationDelegate:instance];
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     @try {

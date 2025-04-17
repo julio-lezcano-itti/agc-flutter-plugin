@@ -17,12 +17,3 @@
 #else
 @import agconnect_clouddb;
 #endif
-
-@implementation GeneratedPluginRegistrant
-
-+ (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
-  [AGConnectAuthPlugin registerWithRegistrar:[registry registrarForPlugin:@"AGConnectAuthPlugin"]];
-  [AGConnectCloudDBPlugin registerWithRegistrar:[registry registrarForPlugin:@"AGConnectCloudDBPlugin"]];
-}
-
-@end

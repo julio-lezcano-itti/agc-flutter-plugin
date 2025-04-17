@@ -15,14 +15,6 @@
  */
 #import "AGConnectCorePlugin.h"
 
-@implementation AGConnectCorePlugin
-+ (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.huawei.flutter/agconnect_core"
-            binaryMessenger:[registrar messenger]];
-  AGConnectCorePlugin* instance = [[AGConnectCorePlugin alloc] init];
-  [registrar addMethodCallDelegate:instance channel:channel];
-}
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"buildInstance" isEqualToString:call.method]) {

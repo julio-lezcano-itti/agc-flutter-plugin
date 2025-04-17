@@ -10,14 +10,7 @@ public class AGConnectAuthPluginHandler: NSObject, FlutterPlugin {
 
     let eventChannelHandler = AGConnectAuthEventHandler.init()
 
-    public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "com.huawei.flutter/agconnect_auth", binaryMessenger: registrar.messenger())
-        let instance = AGConnectAuthPluginHandler()
-        registrar.addMethodCallDelegate(instance, channel: channel)
-        instance.initEventChannel(messenger: registrar.messenger())
 
-        registrar.addApplicationDelegate(instance)
-    }
     func initEventChannel(messenger: FlutterBinaryMessenger) {
 
         let eventChannel = FlutterEventChannel(name: "com.huawei.flutter.event/agconnect_auth", binaryMessenger:
